@@ -39,4 +39,14 @@ foreground_conditioned_examples = [
         12345,
         "imgs/o4.png",
     ],
+    [
+        "imgs/i5.png",
+        "beautiful woman, detailed face, warm atmosphere, at home, bedroom",
+        "Left Light",
+        512,
+        768,
+        2,
+        123,
+        "imgs/o5.png",
+    ],
 ]
