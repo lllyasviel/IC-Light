@@ -4,7 +4,7 @@ opencv-python
 safetensors
 pillow==10.2.0
 einops
-xformers
+torch
 peft
 basicsr
 gradio==3.41.2
