@@ -348,18 +348,21 @@ quick_prompts = [
     'beautiful woman, detailed face, light and shadow',
     'beautiful woman, detailed face, shadow from window',
     'beautiful woman, detailed face, soft studio lighting',
-    'beautiful woman, detailed face, home atmosphere, cozy bedroom illumination'
+    'beautiful woman, detailed face, home atmosphere, cozy bedroom illumination',
 
-
-
-    'beautiful woman',
-    'handsome man',
-    'beautiful woman, cinematic lighting',
-    'handsome man, cinematic lighting',
-    'beautiful woman, natural lighting',
-    'handsome man, natural lighting',
-    'beautiful woman, neo punk lighting, cyberpunk',
-    'handsome man, neo punk lighting, cyberpunk',
+    'handsome man, detailed face, sunshine from window',
+    'handsome man, detailed face, neon light, city',
+    'handsome man, detailed face, sunset over sea',
+    'handsome man, detailed face, golden time',
+    'handsome man, detailed face, sci-fi glowing, cyberpunk',
+    'handsome man, detailed face, natural lighting',
+    'handsome man, detailed face, warm atmosphere, at home, bedroom',
+    'handsome man, detailed face, magic lit',
+    'handsome man, detailed face, evil, gothic, Yharnam',
+    'handsome man, detailed face, light and shadow',
+    'handsome man, detailed face, shadow from window',
+    'handsome man, detailed face, soft studio lighting',
+    'handsome man, detailed face, home atmosphere, cozy bedroom illumination',
 ]
 quick_prompts = [[x] for x in quick_prompts]
 
