@@ -5,6 +5,7 @@ safetensors
 pillow==10.2.0
 einops
 torch
+xformers
 peft
 basicsr
 gradio==3.41.2
