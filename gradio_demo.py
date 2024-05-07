@@ -224,8 +224,9 @@ def run_rmbg(img, sigma=0.0):
 
 
 @torch.inference_mode()
-def process(input_fg, input_bg, prompt, image_width, image_height, num_samples, seed, steps, a_prompt, n_prompt, cfg, highres_scale, highres_denoise, lowres_denoise, bg_source):
+def process(input_fg, prompt, image_width, image_height, num_samples, seed, steps, a_prompt, n_prompt, cfg, highres_scale, highres_denoise, lowres_denoise, bg_source):
     bg_source = BGSource(bg_source)
+    input_bg = None
 
     if bg_source == BGSource.UPLOAD:
         pass
@@ -345,10 +346,10 @@ def process(input_fg, input_bg, prompt, image_width, image_height, num_samples, 
 
 
 @torch.inference_mode()
-def process_relight(input_fg, input_bg, prompt, image_width, image_height, num_samples, seed, steps, a_prompt, n_prompt, cfg, highres_scale, highres_denoise, lowres_denoise, bg_source):
+def process_relight(input_fg, prompt, image_width, image_height, num_samples, seed, steps, a_prompt, n_prompt, cfg, highres_scale, highres_denoise, lowres_denoise, bg_source):
     input_fg, matting = run_rmbg(input_fg)
-    results = process(input_fg, input_bg, prompt, image_width, image_height, num_samples, seed, steps, a_prompt, n_prompt, cfg, highres_scale, highres_denoise, lowres_denoise, bg_source)
-    return results
+    results = process(input_fg, prompt, image_width, image_height, num_samples, seed, steps, a_prompt, n_prompt, cfg, highres_scale, highres_denoise, lowres_denoise, bg_source)
+    return input_fg, results
 
 
 quick_prompts = [
@@ -381,8 +382,8 @@ with block:
     with gr.Row():
         with gr.Column():
             with gr.Row():
-                input_fg = gr.Image(source='upload', type="numpy", label="Foreground", height=480)
-                input_bg = gr.Image(source='upload', type="numpy", label="Background", height=480)
+                input_fg = gr.Image(source='upload', type="numpy", label="Image", height=480)
+                output_bg = gr.Image(type="numpy", label="Preprocessed Foreground", height=480)
             prompt = gr.Textbox(label="Prompt")
             example_inpaint_prompts = gr.Dataset(samples=quick_prompts,
                                                  label='Prompt Quick List',
@@ -398,15 +399,15 @@ with block:
             highres_scale = gr.Slider(label="Highres Scale", minimum=1.0, maximum=3.0, value=1.5, step=0.01)
             with gr.Accordion("Advanced options", open=False):
                 steps = gr.Slider(label="Steps", minimum=1, maximum=100, value=20, step=1)
-                cfg = gr.Slider(label="CFG Scale", minimum=1.0, maximum=32.0, value=3.0, step=0.01)
+                cfg = gr.Slider(label="CFG Scale", minimum=1.0, maximum=32.0, value=2.5, step=0.01)
                 lowres_denoise = gr.Slider(label="Lowres Denoise", minimum=0.1, maximum=1.0, value=0.9, step=0.01)
                 highres_denoise = gr.Slider(label="Highres Denoise", minimum=0.1, maximum=1.0, value=0.5, step=0.01)
-                a_prompt = gr.Textbox(label="Added Prompt", value='best quality, extremely detailed, 4k, 8k, 35mm')
+                a_prompt = gr.Textbox(label="Added Prompt", value='best quality')
                 n_prompt = gr.Textbox(label="Negative Prompt", value='lowres, bad anatomy, bad hands, cropped, worst quality')
         with gr.Column():
             result_gallery = gr.Gallery(height=768, object_fit='contain', label='Outputs')
-    ips = [input_fg, input_bg, prompt, image_width, image_height, num_samples, seed, steps, a_prompt, n_prompt, cfg, highres_scale, highres_denoise, lowres_denoise, bg_source]
-    relight_button.click(fn=process_relight, inputs=ips, outputs=[result_gallery])
+    ips = [input_fg, prompt, image_width, image_height, num_samples, seed, steps, a_prompt, n_prompt, cfg, highres_scale, highres_denoise, lowres_denoise, bg_source]
+    relight_button.click(fn=process_relight, inputs=ips, outputs=[output_bg, result_gallery])
     example_inpaint_prompts.click(lambda x: x[0], inputs=example_inpaint_prompts, outputs=prompt, show_progress=False, queue=False)
 
 
