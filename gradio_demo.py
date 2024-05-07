@@ -3,6 +3,7 @@ import gradio as gr
 import numpy as np
 import torch
 import safetensors.torch as sf
+import db_examples
 
 from PIL import Image
 from diffusers import StableDiffusionPipeline, StableDiffusionImg2ImgPipeline
@@ -404,6 +405,17 @@ with block:
                 n_prompt = gr.Textbox(label="Negative Prompt", value='lowres, bad anatomy, bad hands, cropped, worst quality')
         with gr.Column():
             result_gallery = gr.Gallery(height=832, object_fit='contain', label='Outputs')
+    with gr.Row():
+        dummy_image_for_outputs = gr.Image(visible=False, label='Result')
+        gr.Examples(
+            fn=lambda *args: [args[-1]],
+            examples=db_examples.foreground_conditioned_examples,
+            inputs=[
+                prompt, dummy_image_for_outputs
+            ],
+            outputs=[result_gallery],
+            run_on_click=True
+        )
     ips = [input_fg, prompt, image_width, image_height, num_samples, seed, steps, a_prompt, n_prompt, cfg, highres_scale, highres_denoise, lowres_denoise, bg_source]
     relight_button.click(fn=process_relight, inputs=ips, outputs=[output_bg, result_gallery])
     example_quick_prompts.click(lambda x, y: ', '.join(y.split(', ')[:2] + [x[0]]), inputs=[example_quick_prompts, prompt], outputs=prompt, show_progress=False, queue=False)
