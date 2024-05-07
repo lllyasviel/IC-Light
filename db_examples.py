@@ -116,4 +116,13 @@ foreground_conditioned_examples = [
         12345,
         "imgs/o13.png",
     ],
+    [
+        "imgs/i14.png",
+        "toy, detailed face, sunset over sea",
+        "Right Light",
+        512,
+        704,
+        12345,
+        "imgs/o14.png",
+    ],
 ]
