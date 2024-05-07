@@ -414,7 +414,7 @@ with block:
                 input_fg, prompt, bg_source, image_width, image_height, seed, dummy_image_for_outputs
             ],
             outputs=[result_gallery],
-            run_on_click=True
+            run_on_click=True, examples_per_page=1024
         )
     ips = [input_fg, prompt, image_width, image_height, num_samples, seed, steps, a_prompt, n_prompt, cfg, highres_scale, highres_denoise, lowres_denoise, bg_source]
     relight_button.click(fn=process_relight, inputs=ips, outputs=[output_bg, result_gallery])
