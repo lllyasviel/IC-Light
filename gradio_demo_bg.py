@@ -433,6 +433,17 @@ with block:
                 normal_button = gr.Button(value="Compute Normal (4x Slower)")
         with gr.Column():
             result_gallery = gr.Gallery(height=832, object_fit='contain', label='Outputs')
+    with gr.Row():
+        dummy_image_for_outputs = gr.Image(visible=False, label='Result')
+        gr.Examples(
+            fn=lambda *args: [args[-1]],
+            examples=db_examples.background_conditioned_examples,
+            inputs=[
+                input_fg, input_bg, prompt, bg_source, image_width, image_height, seed, dummy_image_for_outputs
+            ],
+            outputs=[result_gallery],
+            run_on_click=True, examples_per_page=1024
+        )
     ips = [input_fg, input_bg, prompt, image_width, image_height, num_samples, seed, steps, a_prompt, n_prompt, cfg, highres_scale, highres_denoise, bg_source]
     relight_button.click(fn=process_relight, inputs=ips, outputs=[result_gallery])
     normal_button.click(fn=process_normal, inputs=ips, outputs=[result_gallery])
