@@ -383,7 +383,7 @@ with block:
                                  value=BGSource.NONE.value,
                                  label="Lighting Preference (Initial Latent)", type='value')
             example_quick_subjects = gr.Dataset(samples=quick_subjects, label='Subject Quick List', samples_per_page=1000, components=[prompt])
-            example_quick_prompts = gr.Dataset(samples=quick_prompts, label='Prompt Quick List', samples_per_page=1000, components=[prompt])
+            example_quick_prompts = gr.Dataset(samples=quick_prompts, label='Lighting Quick List', samples_per_page=1000, components=[prompt])
             relight_button = gr.Button(value="Relight")
 
             with gr.Group():
