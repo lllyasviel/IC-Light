@@ -173,5 +173,25 @@ background_conditioned_examples = [
         768,
         12345,
         "imgs/alter/o2.png",
-    ]
+    ],
+    [
+        "imgs/alter/i1.jpeg",
+        "imgs/bgs/2.webp",
+        "beautiful woman, cinematic lighting",
+        "Use Background Image",
+        512,
+        768,
+        12345,
+        "imgs/alter/o3.png",
+    ],
+    [
+        "imgs/alter/i1.jpeg",
+        "imgs/bgs/3.webp",
+        "beautiful woman, cinematic lighting",
+        "Use Background Image",
+        512,
+        768,
+        12345,
+        "imgs/alter/o4.png",
+    ],
 ]
