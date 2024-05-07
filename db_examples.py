@@ -95,7 +95,7 @@ foreground_conditioned_examples = [
         "Left Light",
         512,
         768,
-        12345,
+        8888,
         "imgs/o11.png",
     ],
     [
