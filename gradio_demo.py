@@ -373,15 +373,21 @@ with block:
                                                  label='Prompt Quick List',
                                                  components=[prompt])
             relight_button = gr.Button(value="Relight")
-            num_samples = gr.Slider(label="Images", minimum=1, maximum=12, value=1, step=1)
-            seed = gr.Slider(label="Seed", minimum=-1, maximum=2147483647, step=1, value=12345)
-            image_width = gr.Slider(label="Image Width", minimum=256, maximum=1024, value=512, step=64)
-            image_height = gr.Slider(label="Image Height", minimum=256, maximum=1024, value=640, step=64)
-            highres_scale = gr.Slider(label="Highres Scale", minimum=1.0, maximum=3.0, value=1.5, step=0.01)
+
+            with gr.Group():
+                with gr.Row():
+                    num_samples = gr.Slider(label="Images", minimum=1, maximum=12, value=1, step=1)
+                    seed = gr.Number(label="Seed", value=12345)
+
+                with gr.Row():
+                    image_width = gr.Slider(label="Image Width", minimum=256, maximum=1024, value=512, step=64)
+                    image_height = gr.Slider(label="Image Height", minimum=256, maximum=1024, value=640, step=64)
+
             with gr.Accordion("Advanced options", open=False):
                 steps = gr.Slider(label="Steps", minimum=1, maximum=100, value=20, step=1)
                 cfg = gr.Slider(label="CFG Scale", minimum=1.0, maximum=32.0, value=2.5, step=0.01)
-                lowres_denoise = gr.Slider(label="Lowres Denoise", minimum=0.1, maximum=1.0, value=0.9, step=0.01)
+                lowres_denoise = gr.Slider(label="Lowres Denoise (for initial latent)", minimum=0.1, maximum=1.0, value=0.9, step=0.01)
+                highres_scale = gr.Slider(label="Highres Scale", minimum=1.0, maximum=3.0, value=1.5, step=0.01)
                 highres_denoise = gr.Slider(label="Highres Denoise", minimum=0.1, maximum=1.0, value=0.5, step=0.01)
                 a_prompt = gr.Textbox(label="Added Prompt", value='best quality')
                 n_prompt = gr.Textbox(label="Negative Prompt", value='lowres, bad anatomy, bad hands, cropped, worst quality')
