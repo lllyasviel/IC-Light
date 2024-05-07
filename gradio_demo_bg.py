@@ -276,19 +276,8 @@ def process(input_fg, input_bg, prompt, image_width, image_height, num_samples, 
         cross_attention_kwargs={'concat_conds': concat_conds},
     ).images.to(vae.dtype) / vae.config.scaling_factor
 
-    latent_vis = latents.float().clone()  # vis
-
     pixels = vae.decode(latents).sample
-
-    # return pytorch2numpy(pixels, quant=False), [fg, bg]
-
-    # try:
-    #     pixels = perform_upscale(pixels)
-    # except Exception as e:
-    #     print('Skipped ESRGAN Upscaler because', e)
-
     pixels = pytorch2numpy(pixels)
-
     pixels = [resize_without_crop(
         image=p,
         target_width=int(round(image_width * highres_scale / 64.0) * 64),
@@ -324,13 +313,6 @@ def process(input_fg, input_bg, prompt, image_width, image_height, num_samples, 
     pixels = vae.decode(latents).sample
     pixels = pytorch2numpy(pixels, quant=False)
 
-    #
-    latent_vis = torch.nn.functional.interpolate(latent_vis, (image_height, image_width), mode='nearest')
-    latent_vis = latent_vis[:, :3, :, :] * 0.1
-    latent_vis = pytorch2numpy(latent_vis, quant=False)
-    pixels += latent_vis
-    #
-
     return pixels, [fg, bg]
 
 
@@ -338,14 +320,6 @@ def process(input_fg, input_bg, prompt, image_width, image_height, num_samples, 
 def process_relight(input_fg, input_bg, prompt, image_width, image_height, num_samples, seed, steps, a_prompt, n_prompt, cfg, highres_scale, highres_denoise, bg_source):
     input_fg, matting = run_rmbg(input_fg)
     results, extra_images = process(input_fg, input_bg, prompt, image_width, image_height, num_samples, seed, steps, a_prompt, n_prompt, cfg, highres_scale, highres_denoise, bg_source)
-
-    #
-    first_result = results[0]
-    h, w, _ = first_result.shape
-    matting = resize_and_center_crop((matting[..., 0] * 255.0).clip(0, 255).astype(np.uint8), w, h).astype(np.float32)[..., None] / 255.0
-    results += [first_result * matting + 0.5 * (1.0 - matting)]
-    #
-
     results = [(x * 255.0).clip(0, 255).astype(np.uint8) for x in results]
     return results + extra_images
 
@@ -384,9 +358,7 @@ def process_normal(input_fg, input_bg, prompt, image_width, image_height, num_sa
     u = (right - left) * 0.5
     v = (top - bottom) * 0.5
 
-    # u = -u #
-
-    sigma = 10.0 # 6.0
+    sigma = 6.0
     u = np.mean(u, axis=2)
     v = np.mean(v, axis=2)
     h = (1.0 - u ** 2.0 - v ** 2.0).clip(0, 1e5) ** (0.5 * sigma)
