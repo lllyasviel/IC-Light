@@ -69,4 +69,14 @@ foreground_conditioned_examples = [
         8888,
         "imgs/o7.png",
     ],
+    [
+        "imgs/i8.webp",
+        "beautiful woman, detailed face, sunset over sea",
+        "Right Light",
+        512,
+        640,
+        2,
+        42,
+        "imgs/o8.png",
+    ],
 ]
