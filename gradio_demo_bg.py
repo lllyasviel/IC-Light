@@ -326,7 +326,7 @@ def process_relight(input_fg, input_bg, prompt, image_width, image_height, num_s
 
 @torch.inference_mode()
 def process_normal(input_fg, input_bg, prompt, image_width, image_height, num_samples, seed, steps, a_prompt, n_prompt, cfg, highres_scale, highres_denoise, bg_source):
-    input_fg, matting = run_rmbg(input_fg, sigma=16) # 16
+    input_fg, matting = run_rmbg(input_fg, sigma=16)
 
     print('left ...')
     left = process(input_fg, input_bg, prompt, image_width, image_height, 1, seed, steps, a_prompt, n_prompt, cfg, highres_scale, highres_denoise, BGSource.LEFT.value)[0][0]
