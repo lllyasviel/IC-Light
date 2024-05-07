@@ -204,4 +204,14 @@ background_conditioned_examples = [
         12345,
         "imgs/alter/o4.png",
     ],
+    [
+        "imgs/alter/i6.webp",
+        "imgs/bgs/15.png",
+        "handsome man, cinematic lighting",
+        "Use Background Image",
+        512,
+        768,
+        12345,
+        "imgs/alter/o5.png",
+    ],
 ]
