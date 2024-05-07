@@ -411,7 +411,7 @@ with block:
             fn=lambda *args: [args[-1]],
             examples=db_examples.foreground_conditioned_examples,
             inputs=[
-                input_fg, prompt, bg_source, image_width, image_height, cfg, seed, dummy_image_for_outputs
+                input_fg, prompt, bg_source, image_width, image_height, seed, dummy_image_for_outputs
             ],
             outputs=[result_gallery],
             run_on_click=True
