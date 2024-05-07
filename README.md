@@ -158,9 +158,13 @@ Lighting Preference: Right
 
 ![image](https://github.com/lllyasviel/IC-Light/assets/19834515/5d5aa7e5-8cbd-4e1f-9f27-2ecc3c30563a)
 
+---
+
 ### Background-Conditioned Model
 
 The background conditioned model does not require careful prompting. One can just use simple prompts like "handsome man, cinematic lighting".
+
+---
 
 ![image](https://github.com/lllyasviel/IC-Light/assets/19834515/0b2a889f-682b-4393-b1ec-2cabaa182010)
 
@@ -169,6 +173,8 @@ The background conditioned model does not require careful prompting. One can jus
 ![image](https://github.com/lllyasviel/IC-Light/assets/19834515/5bc9d8d9-02cd-442e-a75c-193f115f2ad8)
 
 ![image](https://github.com/lllyasviel/IC-Light/assets/19834515/a35e4c57-e199-40e2-893b-cb1c549612a9)
+
+---
 
 A more structured visualization:
 
