@@ -1,6 +1,12 @@
 foreground_conditioned_examples = [
     [
-        "A very cute monster cat on a glass bottle",
-        "imgs/i1.webp"
+        "imgs/i1.webp",
+        "beautiful woman, detailed face, sunshine, outdoor, warm atmosphere",
+        "Right Light",
+        512,
+        960,
+        2,
+        12345,
+        "imgs/o1.png",
     ],
 ]
