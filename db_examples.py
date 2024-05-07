@@ -134,4 +134,13 @@ foreground_conditioned_examples = [
         12345,
         "imgs/o15.png",
     ],
+    [
+        "imgs/i16.png",
+        "mysteriou human, warm atmosphere, warm atmosphere, at home, bedroom",
+        "Right Light",
+        512,
+        768,
+        100,
+        "imgs/i16.png",
+    ],
 ]
