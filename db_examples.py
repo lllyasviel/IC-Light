@@ -144,3 +144,21 @@ foreground_conditioned_examples = [
         "imgs/o16.png",
     ],
 ]
+
+bg_samples = [
+    'imgs/1.webp',
+    'imgs/2.webp',
+    'imgs/3.webp',
+    'imgs/4.webp',
+    'imgs/5.webp',
+    'imgs/6.webp',
+    'imgs/7.webp',
+    'imgs/8.webp',
+    'imgs/9.webp',
+    'imgs/10.webp',
+    'imgs/11.png',
+    'imgs/12.png',
+    'imgs/13.png',
+    'imgs/14.png',
+    'imgs/15.png',
+]

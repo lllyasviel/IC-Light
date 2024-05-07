@@ -410,9 +410,9 @@ with block:
                                  value=BGSource.UPLOAD.value,
                                  label="Background Source", type='value')
 
-            example_inpaint_prompts = gr.Dataset(samples=quick_prompts,
-                                                 label='Prompt Quick List',
-                                                 components=[prompt])
+            example_prompts = gr.Dataset(samples=quick_prompts, label='Prompt Quick List', components=[prompt])
+            bg_gallery = gr.Gallery(height=128, object_fit='contain', label='Sample Backgrounds', value=db_examples.bg_samples)
+
             relight_button = gr.Button(value="Relight")
             normal_button = gr.Button(value="Compute Normal (4x Slower)")
 
@@ -437,7 +437,7 @@ with block:
     ips = [input_fg, input_bg, prompt, image_width, image_height, num_samples, seed, steps, a_prompt, n_prompt, cfg, highres_scale, highres_denoise, bg_source]
     relight_button.click(fn=process_relight, inputs=ips, outputs=[result_gallery])
     normal_button.click(fn=process_normal, inputs=ips, outputs=[result_gallery])
-    example_inpaint_prompts.click(lambda x: x[0], inputs=example_inpaint_prompts, outputs=prompt, show_progress=False, queue=False)
+    example_prompts.click(lambda x: x[0], inputs=example_prompts, outputs=prompt, show_progress=False, queue=False)
 
 
 block.launch(server_name='0.0.0.0')
