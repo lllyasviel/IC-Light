@@ -141,6 +141,6 @@ foreground_conditioned_examples = [
         512,
         768,
         100,
-        "imgs/i16.png",
+        "imgs/o16.png",
     ],
 ]
