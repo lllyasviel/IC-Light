@@ -80,4 +80,13 @@ foreground_conditioned_examples = [
         12345,
         "imgs/o9.png",
     ],
+    [
+        "imgs/i10.png",
+        "beautiful woman, detailed face, light and shadow",
+        "Left Light",
+        512,
+        960,
+        65123,
+        "imgs/o10.png",
+    ],
 ]
