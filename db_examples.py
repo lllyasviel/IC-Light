@@ -122,7 +122,7 @@ foreground_conditioned_examples = [
         "Right Light",
         512,
         704,
-        12345,
+        100,
         "imgs/o14.png",
     ],
 ]
