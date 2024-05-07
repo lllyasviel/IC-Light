@@ -22,6 +22,10 @@ Or, to use background-conditioned demo
 
 Model downloading is automatic.
 
+# Previews
+
+# Tech
+
 # Model Notes
 
 * iclight_sd15_fc.safetensors - The default relighting model, conditioned on text and foreground. You can use initial latent to influence the relighting.
