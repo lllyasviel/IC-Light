@@ -20,7 +20,7 @@ foreground_conditioned_examples = [
         "imgs/o2.png",
     ],
     [
-        "imgs/i3.webp",
+        "imgs/i3.png",
         "beautiful woman, detailed face, neon light, city",
         "Left Light",
         512,
@@ -30,7 +30,7 @@ foreground_conditioned_examples = [
         "imgs/o3.png",
     ],
     [
-        "imgs/i3.webp",
+        "imgs/i3.png",
         "beautiful woman, detailed face, sunshine from window",
         "Left Light",
         512,
