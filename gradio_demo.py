@@ -228,12 +228,8 @@ def process(input_fg, prompt, image_width, image_height, num_samples, seed, step
     bg_source = BGSource(bg_source)
     input_bg = None
 
-    if bg_source == BGSource.UPLOAD:
+    if bg_source == BGSource.NONE:
         pass
-    elif bg_source == BGSource.UPLOAD_FLIP:
-        input_bg = np.fliplr(input_bg)
-    elif bg_source == BGSource.GREY:
-        input_bg = np.zeros(shape=(image_height, image_width, 3), dtype=np.uint8) + 64
     elif bg_source == BGSource.LEFT:
         gradient = np.linspace(255, 0, image_width)
         image = np.tile(gradient, (image_height, 1))
@@ -251,7 +247,7 @@ def process(input_fg, prompt, image_width, image_height, num_samples, seed, step
         image = np.tile(gradient, (1, image_width))
         input_bg = np.stack((image,) * 3, axis=-1).astype(np.uint8)
     else:
-        raise 'Wrong background source!'
+        raise 'Wrong initial latent!'
 
     rng = torch.Generator(device=device).manual_seed(seed)
 
@@ -275,12 +271,10 @@ def process(input_fg, prompt, image_width, image_height, num_samples, seed, step
             guidance_scale=cfg,
             cross_attention_kwargs={'concat_conds': concat_conds},
         ).images.to(vae.dtype) / vae.config.scaling_factor
-        extra_images = [fg]
     else:
         bg = resize_and_center_crop(input_bg, image_width, image_height)
         bg_latent = numpy2pytorch([bg]).to(device=vae.device, dtype=vae.dtype)
         bg_latent = vae.encode(bg_latent).latent_dist.mode() * vae.config.scaling_factor
-
         latents = i2i_pipe(
             image=bg_latent,
             strength=lowres_denoise,
@@ -296,19 +290,8 @@ def process(input_fg, prompt, image_width, image_height, num_samples, seed, step
             cross_attention_kwargs={'concat_conds': concat_conds},
         ).images.to(vae.dtype) / vae.config.scaling_factor
 
-        extra_images = [fg, bg]
-
     pixels = vae.decode(latents).sample
-
-    # return pytorch2numpy(pixels) + extra_images
-
-    # try:
-    #     pixels = perform_upscale(pixels)
-    # except Exception as e:
-    #     print('Skipped ESRGAN Upscaler because', e)
-
     pixels = pytorch2numpy(pixels)
-
     pixels = [resize_without_crop(
         image=p,
         target_width=int(round(image_width * highres_scale / 64.0) * 64),
@@ -342,7 +325,7 @@ def process(input_fg, prompt, image_width, image_height, num_samples, seed, step
 
     pixels = vae.decode(latents).sample
 
-    return pytorch2numpy(pixels) + extra_images
+    return pytorch2numpy(pixels)
 
 
 @torch.inference_mode()
