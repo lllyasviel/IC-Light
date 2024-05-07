@@ -336,6 +336,22 @@ def process_relight(input_fg, prompt, image_width, image_height, num_samples, se
 
 
 quick_prompts = [
+    'beautiful woman, detailed face, sunshine from window',
+    'beautiful woman, detailed face, neon light, city',
+    'beautiful woman, detailed face, sunset over sea',
+    'beautiful woman, detailed face, golden time',
+    'beautiful woman, detailed face, sci-fi glowing, cyberpunk',
+    'beautiful woman, detailed face, natural lighting',
+    'beautiful woman, detailed face, warm atmosphere, at home, bedroom',
+    'beautiful woman, detailed face, magic lit',
+    'beautiful woman, detailed face, evil, gothic, Yharnam',
+    'beautiful woman, detailed face, light and shadow',
+    'beautiful woman, detailed face, shadow from window',
+    'beautiful woman, detailed face, soft studio lighting',
+    'beautiful woman, detailed face, home atmosphere, cozy bedroom illumination'
+
+
+
     'beautiful woman',
     'handsome man',
     'beautiful woman, cinematic lighting',
@@ -359,7 +375,7 @@ class BGSource(Enum):
 block = gr.Blocks().queue()
 with block:
     with gr.Row():
-        gr.Markdown("## IC-Light ")
+        gr.Markdown("## IC-Light (with Foreground Condition)")
     with gr.Row():
         with gr.Column():
             with gr.Row():
