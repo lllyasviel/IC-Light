@@ -89,4 +89,22 @@ foreground_conditioned_examples = [
         65123,
         "imgs/o10.png",
     ],
+    [
+        "imgs/i11.png",
+        "Buddha, detailed face, sci-fi RGB glowing, cyberpunk",
+        "Left Light",
+        512,
+        768,
+        12345,
+        "imgs/o11.png",
+    ],
+    [
+        "imgs/i11.png",
+        "Buddha, detailed face, natural lighting",
+        "Left Light",
+        512,
+        768,
+        12345,
+        "imgs/o12.png",
+    ],
 ]
