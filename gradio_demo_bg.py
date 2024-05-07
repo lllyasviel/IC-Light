@@ -438,5 +438,10 @@ with block:
     normal_button.click(fn=process_normal, inputs=ips, outputs=[result_gallery])
     example_prompts.click(lambda x: x[0], inputs=example_prompts, outputs=prompt, show_progress=False, queue=False)
 
+    def bg_gallery_selected(gal, evt: gr.SelectData):
+        return gal[evt.index]['name']
+
+    bg_gallery.select(bg_gallery_selected, inputs=bg_gallery, outputs=input_bg)
+
 
 block.launch(server_name='0.0.0.0')
