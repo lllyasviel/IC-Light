@@ -1,4 +1,7 @@
 # IC-Light
+
+*There Will Always Be Those Who Dare To Brave The Relighting's Glow!*
+
 More relighting!
 
     git clone X
