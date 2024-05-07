@@ -12,6 +12,7 @@ from diffusers.models.attention_processor import AttnProcessor2_0
 from transformers import CLIPTextModel, CLIPTokenizer
 from briarmbg import BriaRMBG
 from enum import Enum
+from basicsr.utils.download_util import download_url_to_file
 
 
 # 'stablediffusionapi/realistic-vision-v51'
