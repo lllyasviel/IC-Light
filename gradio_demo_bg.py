@@ -340,7 +340,7 @@ def process_normal(input_fg, input_bg, prompt, image_width, image_height, num_sa
     print('top ...')
     top = process(input_fg, input_bg, prompt, image_width, image_height, 1, seed, steps, a_prompt, n_prompt, cfg, highres_scale, highres_denoise, BGSource.TOP.value)[0][0]
 
-    inner_results = [left * 2.0 - 1.0, right * 2.0 - 1.0, bottom * 2.0 - 1.0, top * 2.0 - 1.0, input_fg.astype(np.float32) / 127.5 - 1.0]
+    inner_results = [left * 2.0 - 1.0, right * 2.0 - 1.0, bottom * 2.0 - 1.0, top * 2.0 - 1.0]
 
     ambient = (left + right + bottom + top) / 4.0
     h, w, _ = ambient.shape
