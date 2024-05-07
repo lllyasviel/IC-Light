@@ -107,4 +107,13 @@ foreground_conditioned_examples = [
         12345,
         "imgs/o12.png",
     ],
+    [
+        "imgs/i13.png",
+        "toy, detailed face, shadow from window",
+        "Bottom Light",
+        512,
+        704,
+        12345,
+        "imgs/o13.png",
+    ],
 ]
