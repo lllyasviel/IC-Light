@@ -125,4 +125,13 @@ foreground_conditioned_examples = [
         100,
         "imgs/o14.png",
     ],
+    [
+        "imgs/i15.png",
+        "dog, magic lit, sci-fi RGB glowing, studio lighting",
+        "Bottom Light",
+        512,
+        768,
+        12345,
+        "imgs/o15.png",
+    ],
 ]
