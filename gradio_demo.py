@@ -353,6 +353,13 @@ quick_prompts = [
 quick_prompts = [[x] for x in quick_prompts]
 
 
+quick_subjects = [
+    'beautiful woman, detailed face',
+    'handsome man, detailed face',
+]
+quick_subjects = [[x] for x in quick_subjects]
+
+
 class BGSource(Enum):
     NONE = "NONE"
     LEFT = "Left Light"
@@ -374,9 +381,8 @@ with block:
             bg_source = gr.Radio(choices=[e.value for e in BGSource],
                                  value=BGSource.NONE.value,
                                  label="Lighting Preference (Initial Latent)", type='value')
-            example_inpaint_prompts = gr.Dataset(samples=quick_prompts,
-                                                 label='Prompt Quick List', samples_per_page=1000,
-                                                 components=[prompt])
+            example_quick_subjects = gr.Dataset(samples=quick_subjects, label='Subject Quick List', samples_per_page=1000, components=[prompt])
+            example_quick_prompts = gr.Dataset(samples=quick_prompts, label='Prompt Quick List', samples_per_page=1000, components=[prompt])
             relight_button = gr.Button(value="Relight")
 
             with gr.Group():
@@ -400,7 +406,8 @@ with block:
             result_gallery = gr.Gallery(height=1024, object_fit='contain', label='Outputs')
     ips = [input_fg, prompt, image_width, image_height, num_samples, seed, steps, a_prompt, n_prompt, cfg, highres_scale, highres_denoise, lowres_denoise, bg_source]
     relight_button.click(fn=process_relight, inputs=ips, outputs=[output_bg, result_gallery])
-    example_inpaint_prompts.click(lambda x: x[0], inputs=example_inpaint_prompts, outputs=prompt, show_progress=False, queue=False)
+    example_quick_prompts.click(lambda x, y: y.split(',')[0] + ', ' + x[0], inputs=[example_quick_prompts, prompt], outputs=prompt, show_progress=False, queue=False)
+    example_quick_subjects.click(lambda x: x[0], inputs=example_quick_subjects, outputs=prompt, show_progress=False, queue=False)
 
 
 block.launch(server_name='0.0.0.0')
