@@ -28,4 +28,8 @@ Model downloading is automatic.
 
 # Cite
 
-
+    @Misc{iclight,
+      author = {Lvmin Zhang and Anyi Rao and Maneesh Agrawala},
+      title  = {IC-Light GitHub Page},
+      year   = {2024},
+    }
