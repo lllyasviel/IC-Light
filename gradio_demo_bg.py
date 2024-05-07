@@ -411,7 +411,7 @@ with block:
                                  label="Background Source", type='value')
 
             example_prompts = gr.Dataset(samples=quick_prompts, label='Prompt Quick List', components=[prompt])
-            bg_gallery = gr.Gallery(height=450, object_fit='contain', label='Background Quick List', value=db_examples.bg_samples, columns=5)
+            bg_gallery = gr.Gallery(height=450, object_fit='contain', label='Background Quick List', value=db_examples.bg_samples, columns=5, allow_preview=False)
             relight_button = gr.Button(value="Relight")
 
             with gr.Group():
