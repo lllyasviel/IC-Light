@@ -28,6 +28,7 @@ Model downloading is automatic.
 
 ### Text-Conditioned Model
 
+### Background-Conditioned Model
 
 # Imposing Consistent Light
 
