@@ -336,33 +336,19 @@ def process_relight(input_fg, prompt, image_width, image_height, num_samples, se
 
 
 quick_prompts = [
-    'beautiful woman, detailed face, sunshine from window',
-    'beautiful woman, detailed face, neon light, city',
-    'beautiful woman, detailed face, sunset over sea',
-    'beautiful woman, detailed face, golden time',
-    'beautiful woman, detailed face, sci-fi glowing, cyberpunk',
-    'beautiful woman, detailed face, natural lighting',
-    'beautiful woman, detailed face, warm atmosphere, at home, bedroom',
-    'beautiful woman, detailed face, magic lit',
-    'beautiful woman, detailed face, evil, gothic, Yharnam',
-    'beautiful woman, detailed face, light and shadow',
-    'beautiful woman, detailed face, shadow from window',
-    'beautiful woman, detailed face, soft studio lighting',
-    'beautiful woman, detailed face, home atmosphere, cozy bedroom illumination',
-
-    'handsome man, detailed face, sunshine from window',
-    'handsome man, detailed face, neon light, city',
-    'handsome man, detailed face, sunset over sea',
-    'handsome man, detailed face, golden time',
-    'handsome man, detailed face, sci-fi glowing, cyberpunk',
-    'handsome man, detailed face, natural lighting',
-    'handsome man, detailed face, warm atmosphere, at home, bedroom',
-    'handsome man, detailed face, magic lit',
-    'handsome man, detailed face, evil, gothic, Yharnam',
-    'handsome man, detailed face, light and shadow',
-    'handsome man, detailed face, shadow from window',
-    'handsome man, detailed face, soft studio lighting',
-    'handsome man, detailed face, home atmosphere, cozy bedroom illumination',
+    'sunshine from window',
+    'neon light, city',
+    'sunset over sea',
+    'golden time',
+    'sci-fi glowing, cyberpunk',
+    'natural lighting',
+    'warm atmosphere, at home, bedroom',
+    'magic lit',
+    'evil, gothic, Yharnam',
+    'light and shadow',
+    'shadow from window',
+    'soft studio lighting',
+    'home atmosphere, cozy bedroom illumination',
 ]
 quick_prompts = [[x] for x in quick_prompts]
 
@@ -389,7 +375,7 @@ with block:
                                  value=BGSource.NONE.value,
                                  label="Lighting Preference (Initial Latent)", type='value')
             example_inpaint_prompts = gr.Dataset(samples=quick_prompts,
-                                                 label='Prompt Quick List',
+                                                 label='Prompt Quick List', samples_per_page=1000,
                                                  components=[prompt])
             relight_button = gr.Button(value="Relight")
 
