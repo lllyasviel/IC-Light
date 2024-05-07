@@ -168,7 +168,7 @@ background_conditioned_examples = [
         "imgs/alter/i2.png",
         "imgs/bgs/11.png",
         "statue of an angel, natural lighting",
-        "Use Background Image",
+        "Use Flipped Background Image",
         512,
         768,
         12345,
