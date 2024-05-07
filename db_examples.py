@@ -162,3 +162,15 @@ bg_samples = [
     'imgs/bgs/14.png',
     'imgs/bgs/15.png',
 ]
+
+background_conditioned_examples = [
+    [
+        "imgs/alter/i2.png",
+        "statue of an angel, natural lighting",
+        "Use Background Image",
+        512,
+        768,
+        12345,
+        "imgs/alter/o2.png",
+    ]
+]
