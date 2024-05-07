@@ -2,7 +2,7 @@
 
 IC-Light is a project to manipulate the illumination of images.
 
-The name "IC-Light" stands for "Imposing Consistent Light". We briefly describe what is "Imposing Consistent Light" at the end of this page.
+The name "IC-Light" stands for **"Imposing Consistent Light"**. We briefly describe what is "Imposing Consistent Light" at the end of this page.
 
 Currently, we release two types of models: text-conditioned relighting model and background-conditioned model. Both types take foreground images as inputs.
 
