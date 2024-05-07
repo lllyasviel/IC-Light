@@ -165,7 +165,7 @@ bg_samples = [
 
 background_conditioned_examples = [
     [
-        "imgs/alter/o1.png",
+        "imgs/alter/i3.png",
         "imgs/bgs/7.webp",
         "beautiful woman, cinematic lighting",
         "Use Background Image",
