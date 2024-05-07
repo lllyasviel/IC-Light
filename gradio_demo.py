@@ -403,7 +403,7 @@ with block:
                 a_prompt = gr.Textbox(label="Added Prompt", value='best quality')
                 n_prompt = gr.Textbox(label="Negative Prompt", value='lowres, bad anatomy, bad hands, cropped, worst quality')
         with gr.Column():
-            result_gallery = gr.Gallery(height=1024, object_fit='contain', label='Outputs')
+            result_gallery = gr.Gallery(height=832, object_fit='contain', label='Outputs')
     ips = [input_fg, prompt, image_width, image_height, num_samples, seed, steps, a_prompt, n_prompt, cfg, highres_scale, highres_denoise, lowres_denoise, bg_source]
     relight_button.click(fn=process_relight, inputs=ips, outputs=[output_bg, result_gallery])
     example_quick_prompts.click(lambda x, y: y + ', ' + x[0], inputs=[example_quick_prompts, prompt], outputs=prompt, show_progress=False, queue=False)
