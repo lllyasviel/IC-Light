@@ -362,7 +362,7 @@ quick_subjects = [[x] for x in quick_subjects]
 
 
 class BGSource(Enum):
-    NONE = "NONE"
+    NONE = "None"
     LEFT = "Left Light"
     RIGHT = "Right Light"
     TOP = "Top Light"
