@@ -411,10 +411,8 @@ with block:
                                  label="Background Source", type='value')
 
             example_prompts = gr.Dataset(samples=quick_prompts, label='Prompt Quick List', components=[prompt])
-            bg_gallery = gr.Gallery(height=128, object_fit='contain', label='Sample Backgrounds', value=db_examples.bg_samples)
-
+            bg_gallery = gr.Gallery(height=512, object_fit='contain', label='Sample Backgrounds', value=db_examples.bg_samples, columns=5)
             relight_button = gr.Button(value="Relight")
-            normal_button = gr.Button(value="Compute Normal (4x Slower)")
 
             with gr.Group():
                 with gr.Row():
@@ -432,6 +430,7 @@ with block:
                 a_prompt = gr.Textbox(label="Added Prompt", value='best quality')
                 n_prompt = gr.Textbox(label="Negative Prompt",
                                       value='lowres, bad anatomy, bad hands, cropped, worst quality')
+                normal_button = gr.Button(value="Compute Normal (4x Slower)")
         with gr.Column():
             result_gallery = gr.Gallery(height=832, object_fit='contain', label='Outputs')
     ips = [input_fg, input_bg, prompt, image_width, image_height, num_samples, seed, steps, a_prompt, n_prompt, cfg, highres_scale, highres_denoise, bg_source]
