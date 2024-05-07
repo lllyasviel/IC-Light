@@ -368,7 +368,7 @@ def process_normal(input_fg, input_bg, prompt, image_width, image_height, num_sa
     normal /= np.sum(normal ** 2.0, axis=2, keepdims=True) ** 0.5
     normal = normal * matting + np.stack([z, z, 1 - z], axis=2) * (1 - matting)
 
-    results = inner_results + [normal, ambient, left, right, bottom, top, u, v, h]
+    results = [normal, left, right, bottom, top] + inner_results
     results = [(x * 127.5 + 127.5).clip(0, 255).astype(np.uint8) for x in results]
     return results
 
