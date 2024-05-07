@@ -340,7 +340,7 @@ quick_prompts = [
     'neon light, city',
     'sunset over sea',
     'golden time',
-    'sci-fi glowing, cyberpunk',
+    'sci-fi RGB glowing, cyberpunk',
     'natural lighting',
     'warm atmosphere, at home, bedroom',
     'magic lit',
