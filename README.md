@@ -170,6 +170,9 @@ The background conditioned model does not require careful prompting. One can jus
 
 ![image](https://github.com/lllyasviel/IC-Light/assets/19834515/a35e4c57-e199-40e2-893b-cb1c549612a9)
 
+A more structured visualization:
+
+![r1](https://github.com/lllyasviel/IC-Light/assets/19834515/c1daafb5-ac8b-461c-bff2-899e4c671ba3)
 
 # Imposing Consistent Light
 
