@@ -24,13 +24,12 @@ Or, to use background-conditioned demo:
 
 Model downloading is automatic.
 
-# Previews
+# Screenshot
 
 ### Text-Conditioned Model
 
 
-
-# Tech
+# Imposing Consistent Light
 
 # Model Notes
 
