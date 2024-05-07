@@ -1,7 +1,5 @@
 diffusers==0.27.2
 transformers==4.36.2
-datasets==2.15.0
-accelerate==0.25.0
 opencv-python
 safetensors
 pillow==10.2.0
