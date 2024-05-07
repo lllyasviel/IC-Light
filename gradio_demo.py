@@ -249,7 +249,7 @@ def process(input_fg, prompt, image_width, image_height, num_samples, seed, step
     else:
         raise 'Wrong initial latent!'
 
-    rng = torch.Generator(device=device).manual_seed(seed)
+    rng = torch.Generator(device=device).manual_seed(int(seed))
 
     fg = resize_and_center_crop(input_fg, image_width, image_height)
 
@@ -377,7 +377,7 @@ with block:
             with gr.Group():
                 with gr.Row():
                     num_samples = gr.Slider(label="Images", minimum=1, maximum=12, value=1, step=1)
-                    seed = gr.Number(label="Seed", value=12345)
+                    seed = gr.Number(label="Seed", value=12345, precision=0)
 
                 with gr.Row():
                     image_width = gr.Slider(label="Image Width", minimum=256, maximum=1024, value=512, step=64)
