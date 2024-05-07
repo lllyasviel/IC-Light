@@ -366,13 +366,11 @@ quick_prompts = [[x] for x in quick_prompts]
 
 
 class BGSource(Enum):
-    UPLOAD = "Use Background Image"
-    UPLOAD_FLIP = "Use Flipped Background Image"
+    NONE = "NONE"
     LEFT = "Left Light"
     RIGHT = "Right Light"
     TOP = "Top Light"
     BOTTOM = "Bottom Light"
-    GREY = "Ambient"
 
 
 block = gr.Blocks().queue()
@@ -385,13 +383,13 @@ with block:
                 input_fg = gr.Image(source='upload', type="numpy", label="Image", height=480)
                 output_bg = gr.Image(type="numpy", label="Preprocessed Foreground", height=480)
             prompt = gr.Textbox(label="Prompt")
+            bg_source = gr.Radio(choices=[e.value for e in BGSource],
+                                 value=BGSource.NONE.value,
+                                 label="Lighting Preference (Initial Latent)", type='value')
             example_inpaint_prompts = gr.Dataset(samples=quick_prompts,
                                                  label='Prompt Quick List',
                                                  components=[prompt])
             relight_button = gr.Button(value="Relight")
-            bg_source = gr.Radio(choices=[e.value for e in BGSource],
-                                 value=BGSource.UPLOAD.value,
-                                 label="Background Source", type='value')
             num_samples = gr.Slider(label="Images", minimum=1, maximum=12, value=1, step=1)
             seed = gr.Slider(label="Seed", minimum=-1, maximum=2147483647, step=1, value=12345)
             image_width = gr.Slider(label="Image Width", minimum=256, maximum=1024, value=512, step=64)
