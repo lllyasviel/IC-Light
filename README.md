@@ -210,11 +210,11 @@ Below are bigger images (feel free to try yourself to get more results!)
 
 ![image](https://github.com/lllyasviel/IC-Light/assets/19834515/2daab276-fdfa-4b0c-abcb-e591f575598a)
 
-At the same time, [geowizard](https://fuxiao0719.github.io/projects/geowizard/) (geowizard is a really great work!):
+For reference, [geowizard](https://fuxiao0719.github.io/projects/geowizard/) (geowizard is a really great work!):
 
 ![image](https://github.com/lllyasviel/IC-Light/assets/19834515/4ba1a96d-e218-42ab-83ae-a7918d56ee5f)
 
-At the same time, [switchlight](https://arxiv.org/pdf/2402.18848) (switchlight is another great work!):
+And, [switchlight](https://arxiv.org/pdf/2402.18848) (switchlight is another great work!):
 
 ![image](https://github.com/lllyasviel/IC-Light/assets/19834515/fbdd961f-0b26-45d2-802e-ffd734affab8)
 
