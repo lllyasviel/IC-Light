@@ -110,6 +110,10 @@ Lighting Preference: Left
 
 ![image](https://github.com/lllyasviel/IC-Light/assets/19834515/0f376dd1-4339-4a27-9f33-95ae67b61bc4)
 
+(beautiful woman, detailed face, soft studio lighting)
+
+![image](https://github.com/lllyasviel/IC-Light/assets/19834515/fe0a72df-69d4-4e11-b661-fb8b84d0274d)
+
 ---
 
 **Prompt: Buddha, detailed face, sci-fi RGB glowing, cyberpunk**
