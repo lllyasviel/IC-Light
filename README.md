@@ -202,7 +202,7 @@ As a result, the model is able to produce highly consistent relight - **so** con
 
 ![r2](https://github.com/lllyasviel/IC-Light/assets/19834515/25068f6a-f945-4929-a3d6-e8a152472223)
 
-From left to right are inputs, model outputs relighting, decided shadow image, and merged normal maps. Note that the model is not trained with any normal map data. This normal estimation comes from the consistency of relighting.
+From left to right are inputs, model outputs relighting, devided shadow image, and merged normal maps. Note that the model is not trained with any normal map data. This normal estimation comes from the consistency of relighting.
 
 You can reproduce this experiment using this button (it is 4x slower because it relight image 4 times)
 
