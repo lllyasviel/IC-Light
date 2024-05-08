@@ -11,7 +11,7 @@ Currently, we release two types of models: text-conditioned relighting model and
 Below script will run the text-conditioned relighting model:
 
     git clone https://github.com/lllyasviel/IC-Light.git
-    cd iclight
+    cd IC-Light
     conda create -n iclight python=3.10
     conda activate iclight
     pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
