@@ -196,12 +196,27 @@ As a result, the model is able to produce highly consistent relight - so consist
 
 ![r2](https://github.com/lllyasviel/IC-Light/assets/19834515/25068f6a-f945-4929-a3d6-e8a152472223)
 
-From left to right are inputs, model outputs relighting, decided shadow image, and merged normal maps. Note that the model is not trained with any normal map data. This comes from the consistency of relighting.
+From left to right are inputs, model outputs relighting, decided shadow image, and merged normal maps. Note that the model is not trained with any normal map data. This normal estimation comes from the consistency of relighting.
 
-You can reproduce this experiment using this button
+You can reproduce this experiment using this button (it is 4x slower because it relight image 4 times)
 
+![image](https://github.com/lllyasviel/IC-Light/assets/19834515/d9c37bf7-2136-446c-a9a5-5a341e4906de)
 
+![image](https://github.com/lllyasviel/IC-Light/assets/19834515/fcf5dd55-0309-4e8e-9721-d55931ea77f0)
 
+Below are bigger images (feel free to try yourself to get more results!)
+
+![image](https://github.com/lllyasviel/IC-Light/assets/19834515/12335218-186b-4c61-b43a-79aea9df8b21)
+
+![image](https://github.com/lllyasviel/IC-Light/assets/19834515/2daab276-fdfa-4b0c-abcb-e591f575598a)
+
+At the same time, [geowizard](https://fuxiao0719.github.io/projects/geowizard/) (geowizard is a really great work!):
+
+![image](https://github.com/lllyasviel/IC-Light/assets/19834515/4ba1a96d-e218-42ab-83ae-a7918d56ee5f)
+
+At the same time, [switchlight](https://arxiv.org/pdf/2402.18848) (switchlight is another great work!):
+
+![image](https://github.com/lllyasviel/IC-Light/assets/19834515/fbdd961f-0b26-45d2-802e-ffd734affab8)
 
 # Model Notes
 
