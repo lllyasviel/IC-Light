@@ -48,11 +48,11 @@ Lighting Preference: Left
 
 ---
 
-**beautiful woman, detailed face, neon light, city**
+**beautiful woman, detailed face, neon, Wong Kar-wai, warm**
 
 Lighting Preference: Left
 
-![image](https://github.com/lllyasviel/IC-Light/assets/19834515/70db6cf1-973b-4925-849e-0560a4a0e1ec)
+![image](https://github.com/lllyasviel/IC-Light/assets/19834515/f53c9de2-534a-42f4-8272-6d16a021fc01)
 
 ---
 
