@@ -186,6 +186,8 @@ In HDR space, illumination has a property that all light transports are independ
 
 As a result, the blending of appearances of different light sources is equivalent to the appearance with mixed light sources:
 
+![cons](https://github.com/lllyasviel/IC-Light/assets/19834515/27c67787-998e-469f-862f-047344e100cd)
+
 Using the above light stage as an example, the two images from the "appearance mixture" and "light source mixture" are consistent (mathematically equivalent in HDR space, ideally).
 
 # Model Notes
