@@ -194,7 +194,7 @@ As a result, the blending of appearances of different light sources is equivalen
 
 ![cons](https://github.com/lllyasviel/IC-Light/assets/19834515/27c67787-998e-469f-862f-047344e100cd)
 
-Using the above light stage as an example, the two images from the "appearance mixture" and "light source mixture" are consistent (mathematically equivalent in HDR space, ideally).
+Using the above [light stage](https://www.pauldebevec.com/Research/LS/) as an example, the two images from the "appearance mixture" and "light source mixture" are consistent (mathematically equivalent in HDR space, ideally).
 
 We imposed such consistency (using MLPs in latent space) when training the relighting models.
 
