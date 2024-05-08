@@ -108,7 +108,7 @@ Lighting Preference: Left
 
 Lighting Preference: Left
 
-![image](https://github.com/lllyasviel/IC-Light/assets/19834515/0f376dd1-4339-4a27-9f33-95ae67b61bc4)
+![image](https://github.com/lllyasviel/IC-Light/assets/19834515/706f70a8-d1a0-4e0b-b3ac-804e8e231c0f)
 
 (beautiful woman, detailed face, soft studio lighting)
 
