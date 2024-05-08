@@ -198,6 +198,10 @@ As a result, the model is able to produce highly consistent relight - so consist
 
 From left to right are inputs, model outputs relighting, decided shadow image, and merged normal maps. Note that the model is not trained with any normal map data. This comes from the consistency of relighting.
 
+You can reproduce this experiment using this button
+
+
+
 
 # Model Notes
 
