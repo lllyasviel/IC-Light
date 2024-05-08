@@ -24,6 +24,8 @@ Or, to use background-conditioned demo:
 
 Model downloading is automatic.
 
+Note that the "gradio_demo.py" has an official [huggingFace Space here](https://huggingface.co/spaces/lllyasviel/IC-Light).
+
 # Screenshot
 
 ### Text-Conditioned Model
