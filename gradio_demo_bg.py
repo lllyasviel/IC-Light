@@ -1,3 +1,4 @@
+import os
 import math
 import gradio as gr
 import numpy as np
@@ -49,7 +50,10 @@ unet.forward = hooked_unet_forward
 # Load
 
 model_path = './models/iclight_sd15_fbc.safetensors'
-download_url_to_file(url='https://huggingface.co/lllyasviel/ic-light/resolve/main/iclight_sd15_fbc.safetensors', dst=model_path)
+
+if not os.path.exists(model_path):
+    download_url_to_file(url='https://huggingface.co/lllyasviel/ic-light/resolve/main/iclight_sd15_fbc.safetensors', dst=model_path)
+
 sd_offset = sf.load_file(model_path)
 sd_origin = unet.state_dict()
 keys = sd_origin.keys()
