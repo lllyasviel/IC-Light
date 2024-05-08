@@ -6,6 +6,5 @@ pillow==10.2.0
 einops
 torch
 peft
-basicsr
 gradio==3.41.2
 protobuf==3.20
