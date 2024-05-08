@@ -359,7 +359,7 @@ def process_normal(input_fg, input_bg, prompt, image_width, image_height, num_sa
     u = (right - left) * 0.5
     v = (top - bottom) * 0.5
 
-    sigma = 6.0
+    sigma = 10.0
     u = np.mean(u, axis=2)
     v = np.mean(v, axis=2)
     h = (1.0 - u ** 2.0 - v ** 2.0).clip(0, 1e5) ** (0.5 * sigma)
