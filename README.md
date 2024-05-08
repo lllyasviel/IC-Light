@@ -190,6 +190,12 @@ As a result, the blending of appearances of different light sources is equivalen
 
 Using the above light stage as an example, the two images from the "appearance mixture" and "light source mixture" are consistent (mathematically equivalent in HDR space, ideally).
 
+We imposed such consistency (using MLPs in latent space) when training the relighting models.
+
+As a result, the model is able to produce highly consistent relight - so consistent that different relightings can even be merged as normal maps! Despite the fact that the models are latent diffusion.
+
+
+
 # Model Notes
 
 * **iclight_sd15_fc.safetensors** - The default relighting model, conditioned on text and foreground. You can use initial latent to influence the relighting.
@@ -205,3 +211,13 @@ Using the above light stage as an example, the two images from the "appearance m
       title  = {IC-Light GitHub Page},
       year   = {2024},
     }
+
+# Related Work
+
+Also read ...
+
+[Total Relighting: Learning to Relight Portraits for Background Replacement](https://augmentedperception.github.io/total_relighting/)
+
+[Relightful Harmonization: Lighting-aware Portrait Background Replacement](https://arxiv.org/abs/2312.06886)
+
+[SwitchLight: Co-design of Physics-driven Architecture and Pre-training Framework for Human Portrait Relighting](https://arxiv.org/pdf/2402.18848)
