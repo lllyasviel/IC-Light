@@ -194,6 +194,9 @@ We imposed such consistency (using MLPs in latent space) when training the relig
 
 As a result, the model is able to produce highly consistent relight - so consistent that different relightings can even be merged as normal maps! Despite the fact that the models are latent diffusion.
 
+![r2](https://github.com/lllyasviel/IC-Light/assets/19834515/25068f6a-f945-4929-a3d6-e8a152472223)
+
+From left to right are inputs, model outputs relighting, decided shadow image, and merged normal maps. Note that the model is not trained with any normal map data. This comes from the consistency of relighting.
 
 
 # Model Notes
