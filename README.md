@@ -198,7 +198,7 @@ Using the above light stage as an example, the two images from the "appearance m
 
 We imposed such consistency (using MLPs in latent space) when training the relighting models.
 
-As a result, the model is able to produce highly consistent relight - so consistent that different relightings can even be merged as normal maps! Despite the fact that the models are latent diffusion.
+As a result, the model is able to produce highly consistent relight - **so** consistent that different relightings can even be merged as normal maps! Despite the fact that the models are latent diffusion.
 
 ![r2](https://github.com/lllyasviel/IC-Light/assets/19834515/25068f6a-f945-4929-a3d6-e8a152472223)
 
