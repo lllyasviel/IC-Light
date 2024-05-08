@@ -175,6 +175,12 @@ The background conditioned model does not require careful prompting. One can jus
 
 # Imposing Consistent Light
 
+In HDR space, illumination has a property that all light transports are independent. 
+
+As a result, the blending of appearances of different light sources is equivalent to the appearance with mixed light sources:
+
+Using the above light stage as an example, the two images from the "appearance mixture" and "light source mixture" are consistent (mathematically equivalent in HDR space, ideally).
+
 # Model Notes
 
 * **iclight_sd15_fc.safetensors** - The default relighting model, conditioned on text and foreground. You can use initial latent to influence the relighting.
