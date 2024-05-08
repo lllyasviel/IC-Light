@@ -351,6 +351,7 @@ quick_prompts = [
     'shadow from window',
     'soft studio lighting',
     'home atmosphere, cozy bedroom illumination',
+    'neon, Wong Kar-wai, warm'
 ]
 quick_prompts = [[x] for x in quick_prompts]
 

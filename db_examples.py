@@ -19,7 +19,7 @@ foreground_conditioned_examples = [
     ],
     [
         "imgs/i3.png",
-        "beautiful woman, detailed face, neon light, city",
+        "beautiful woman, detailed face, neon, Wong Kar-wai, warm",
         "Left Light",
         512,
         768,
