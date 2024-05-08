@@ -48,7 +48,9 @@ unet.forward = hooked_unet_forward
 
 # Load
 
-sd_offset = sf.load_file('./models/iclight_sd15_fc.safetensors')
+model_path = './models/iclight_sd15_fc.safetensors'
+download_url_to_file(url='https://huggingface.co/lllyasviel/ic-light/resolve/main/iclight_sd15_fc.safetensors', dst=model_path)
+sd_offset = sf.load_file(model_path)
 sd_origin = unet.state_dict()
 keys = sd_origin.keys()
 sd_merged = {k: sd_origin[k] + sd_offset[k] for k in sd_origin.keys()}
