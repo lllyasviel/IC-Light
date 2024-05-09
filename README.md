@@ -1,5 +1,8 @@
 # IC-Light
 
+> [![Replicate - Text-Conditioned Model](https://replicate.com/zsxkib/ic-light/badge)](https://replicate.com/zsxkib/ic-light) ✍️✨ Prompts to auto-magically relight your images!
+> [![Replicate - Background-Conditioned Model](https://replicate.com/zsxkib/ic-light-background/badge)](https://replicate.com/zsxkib/ic-light-background) 🖼️✨ Background images + prompts to auto-magically relight your images!
+
 IC-Light is a project to manipulate the illumination of images.
 
 The name "IC-Light" stands for **"Imposing Consistent Light"** (we will briefly describe this at the end of this page).
