@@ -36,6 +36,10 @@ Below script will run the text-conditioned relighting model:
     !pip install -r requirements.txt
     !python gradio_demo.py --share
 
+Or, to use background-conditioned demo:
+
+    !python gradio_demo_bg.py --share
+
 # Screenshot
 
 ### Text-Conditioned Model
