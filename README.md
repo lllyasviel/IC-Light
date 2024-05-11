@@ -26,6 +26,16 @@ Model downloading is automatic.
 
 Note that the "gradio_demo.py" has an official [huggingFace Space here](https://huggingface.co/spaces/lllyasviel/IC-Light).
 
+## Use Google Colab
+
+Below script will run the text-conditioned relighting model:
+
+    !git clone https://github.com/lllyasviel/IC-Light.git
+    %cd IC-Light
+    !pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+    !pip install -r requirements.txt
+    !python gradio_demo.py --share
+
 # Screenshot
 
 ### Text-Conditioned Model
