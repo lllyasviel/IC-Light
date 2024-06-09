@@ -232,6 +232,8 @@ And, [switchlight](https://arxiv.org/pdf/2402.18848) (switchlight is another gre
 
 * **iclight_sd15_fbc.safetensors** - Relighting model conditioned with text, foreground, and background.
 
+Also, note that the original [BRIA RMBG 1.4](https://huggingface.co/briaai/RMBG-1.4) is for non-commercial use. If you use IC-Light in commercial projects, replace it with other background replacer like [BiRefNet](https://github.com/ZhengPeng7/BiRefNet).
+
 # Cite
 
     @Misc{iclight,
