@@ -6,6 +6,10 @@ The name "IC-Light" stands for **"Imposing Consistent Light"** (we will briefly 
 
 Currently, we release two types of models: text-conditioned relighting model and background-conditioned model. Both types take foreground images as inputs.
 
+# News
+
+Some news about flux is [here](https://github.com/lllyasviel/IC-Light/discussions/98).
+
 # Get Started
 
 Below script will run the text-conditioned relighting model:
