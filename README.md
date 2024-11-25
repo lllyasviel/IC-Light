@@ -6,9 +6,11 @@ The name "IC-Light" stands for **"Imposing Consistent Light"** (we will briefly 
 
 Currently, we release two types of models: text-conditioned relighting model and background-conditioned model. Both types take foreground images as inputs.
 
+**Note that "iclightai dot com" is a scam website. They have no relationship with us. Do not give scam websites money! This GitHub repo is the only official IC-Light.**
+
 # News
 
-Some news about flux is [here](https://github.com/lllyasviel/IC-Light/discussions/98).
+Some news about flux is [here](https://github.com/lllyasviel/IC-Light/discussions/98). (A fix [update](https://github.com/lllyasviel/IC-Light/discussions/98#discussioncomment-11370266) is added at Nov 25, more demos will be uploaded soon.)
 
 # Get Started
 
