@@ -5,6 +5,7 @@ import numpy as np
 import torch
 import safetensors.torch as sf
 import db_examples
+import argparse
 
 from PIL import Image
 from diffusers import StableDiffusionPipeline, StableDiffusionImg2ImgPipeline
@@ -24,6 +25,11 @@ text_encoder = CLIPTextModel.from_pretrained(sd15_name, subfolder="text_encoder"
 vae = AutoencoderKL.from_pretrained(sd15_name, subfolder="vae")
 unet = UNet2DConditionModel.from_pretrained(sd15_name, subfolder="unet")
 rmbg = BriaRMBG.from_pretrained("briaai/RMBG-1.4")
+
+# command line arguments
+parser = argparse.ArgumentParser(description='IC-Light Relighting with Foreground Condition')
+parser.add_argument('--share', action='store_true', help='Share the app on Gradio')
+args = parser.parse_args()
 
 # Change UNet
 
@@ -430,4 +436,4 @@ with block:
     example_quick_subjects.click(lambda x: x[0], inputs=example_quick_subjects, outputs=prompt, show_progress=False, queue=False)
 
 
-block.launch(server_name='0.0.0.0')
+block.launch(server_name='0.0.0.0', share=args.share)
