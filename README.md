@@ -10,6 +10,8 @@ Currently, we release two types of models: text-conditioned relighting model and
 
 # News
 
+[Alternative model](https://github.com/lllyasviel/IC-Light/discussions/109) for stronger illumination modifications.
+
 Some news about flux is [here](https://github.com/lllyasviel/IC-Light/discussions/98). (A fix [update](https://github.com/lllyasviel/IC-Light/discussions/98#discussioncomment-11370266) is added at Nov 25, more demos will be uploaded soon.)
 
 # Get Started
