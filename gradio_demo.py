@@ -257,6 +257,8 @@ def process(input_fg, prompt, image_width, image_height, num_samples, seed, step
     else:
         raise 'Wrong initial latent!'
 
+    if seed == -1:
+        seed = torch.seed()
     rng = torch.Generator(device=device).manual_seed(int(seed))
 
     fg = resize_and_center_crop(input_fg, image_width, image_height)
