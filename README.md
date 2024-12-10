@@ -22,7 +22,10 @@ Below script will run the text-conditioned relighting model:
     cd IC-Light
     conda create -n iclight python=3.10
     conda activate iclight
+    # CUDA
     pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+    # RCOM
+    pip install torch torchvision --index-url https://download.pytorch.org/whl/rocm6.2
     pip install -r requirements.txt
     python gradio_demo.py
 
