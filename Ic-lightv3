@@ -1,0 +1,25 @@
+import torch
+from diffusers import StableDiffusionImg2ImgPipeline
+from PIL import Image
+
+# Load the model from Hugging Face
+model_id = "lllyasviel/iclight-v2"
+pipe = StableDiffusionImg2ImgPipeline.from_pretrained(model_id, torch_dtype=torch.float16)
+pipe.to("cuda" if torch.cuda.is_available() else "cpu")  # Use GPU if available
+
+# Load an image (replace with your own image path)
+image_path = "input_image.jpg"  # Make sure to upload an image named 'input_image.jpg'
+image = Image.open(image_path).convert("RGB")
+
+# Resize the image to 512x512 without cropping
+image = image.resize((512, 512))
+
+# Run IC-Light v2
+prompt = "Enhanced lighting, cinematic portrait"
+output = pipe(prompt=prompt, image=image, strength=0.75, guidance_scale=7.5)
+
+# Save the output
+output_image = output.images[0]
+output_image.save("enhanced_image.png")
+
+print("Processing complete! Output saved as 'enhanced_image.png'.")
