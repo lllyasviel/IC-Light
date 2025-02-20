@@ -244,10 +244,13 @@ Also, note that the original [BRIA RMBG 1.4](https://huggingface.co/briaai/RMBG-
 
 # Cite
 
-    @Misc{iclight,
-      author = {Lvmin Zhang and Anyi Rao and Maneesh Agrawala},
-      title  = {IC-Light GitHub Page},
-      year   = {2024},
+    @inproceedings{
+        zhang2025scaling,
+        title={Scaling In-the-Wild Training for Diffusion-based Illumination Harmonization and Editing by Imposing Consistent Light Transport},
+        author={Lvmin Zhang and Anyi Rao and Maneesh Agrawala},
+        booktitle={The Thirteenth International Conference on Learning Representations},
+        year={2025},
+        url={https://openreview.net/forum?id=u1cQYxRI1H}
     }
 
 # Related Work
